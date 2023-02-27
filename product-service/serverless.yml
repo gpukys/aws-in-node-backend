@@ -59,14 +59,15 @@ provider:
 #    - include-me-dir/**
 
 functions:
+  productsById:
+      handler: handler.productsById
+      events:
+        - httpApi: 'GET /products/{id}'
   products:
     handler: handler.products
     events:
       - httpApi: 'GET /products'
-  productsById:
-    handler: handler.productsById
-    events:
-      - httpApi: 'GET /products/{id}'
+  
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
