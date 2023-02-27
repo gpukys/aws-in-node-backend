@@ -2,8 +2,7 @@
 const productsData = require('./products');
 
 function findProductById(products, id) {
-  console.log(products)
-  return products[0]
+  return products.find(e => e.id === id);
 }
 
 
